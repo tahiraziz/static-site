@@ -1,0 +1,41 @@
+.Card {
+    width: 300px;
+    max-width: 500px;
+    height: 225px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.15);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+}
+.Card:hover {
+    transform: scale(1.1,1.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+.Card img {
+    height: 110%; /* to match the scale factor above so doesn't look weird*/
+    position: absolute; /* relative/absolute trick */
+    top: 0;
+    z-index: -1; /* put img behind everything else*/
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.Card:hover img {
+    transform: translateY(-20px); /* can target specific children on hover too*/
+}
+.Card h3 {
+	color: white;
+	font-size: 30px;
+	margin: 20px 0 0 20px;
+	width: 190px;
+}
+.Card p {
+	color: rgba(255,255,255, 0.8);
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 18px;
+	align-self: end;
+	margin: 0 0 20px 20px;
+}
